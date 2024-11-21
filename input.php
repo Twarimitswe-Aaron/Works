@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .div{
+            position: relative;
+            float: left;
+            width: 40px;
+            top: 205px;
+           
+
+        }
+        form{
+            float: left;
+            width: 30%;
+        }
+    </style>
 </head>
 <body>
     <h1>School Inspection</h1>
@@ -112,28 +126,94 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hiddenCode = $_POST['hiddenCode'];
     $comment = $_POST['comment'];
 
-    if  ($searchQuery !='' && $websiteURL !='' &&$surveyDate !='' &&
-    $surveyTime !='' &&$firstName !='' &&$lastName !='' && $email !='' &&$password !='' &&
+    if  (  $surveyDate !='' &&
+    $firstName !='' &&$lastName !='' && $email !='' &&$password !='' &&
     $telephone !='' && $school !='' && $gender !='' && $class !='' &&
     $age !='' &&$subjects !='' &&$level !=''  ){
-        echo "Search Query: $searchQuery<br>";
-        echo "Website URL: $websiteURL<br>";
-        echo "Survey Date: $surveyDate<br>";
-        echo "Survey Time: $surveyTime<br>";
-        echo "First Name: $firstName<br>";
-        echo "Last Name: $lastName<br>";
-        echo "Email: $email<br>";
-        echo "Password: $password<br>";
-        echo "Telephone: $telephone<br>";
-        echo "School: $school<br>";
-        echo "Gender:".$gender."<br>";
-        echo "Class: $class<br>";
-        echo "Age: $age<br>";
-        echo "Subjects: ".$subjects."<br>";
-        echo "Level: $level<br>";
-        echo "Favorite Color: $color<br>";
-        echo "Hidden Code: $hiddenCode<br>";
-        echo "Comment: $comment<br>";
+   
+        echo "<div class='div'><table border='1' cellspacing='0' width='100%'>
+        <thead>
+            <tr>
+                <th>Field Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Search Query</th>
+                <td>$searchQuery</td>
+            </tr>
+            <tr>
+                <th>Website URL</th>
+                <td>$websiteURL</td>
+            </tr>
+            <tr>
+                <th>Survey Date</th>
+                <td>$surveyDate</td>
+            </tr>
+            <tr>
+                <th>Survey Time</th>
+                <td>$surveyTime</td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td>$firstName</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>$lastName</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>$email</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>$password</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>$telephone</td>
+            </tr>
+            <tr>
+                <th>School</th>
+                <td>$school</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>$gender</td>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <td>$class</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>$age</td>
+            </tr>
+            <tr>
+                <th>Subjects</th>
+                <td>$subjects</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>$level</td>
+            </tr>
+            <tr>
+                <th>Favorite Color</th>
+                <td>$color</td>
+            </tr>
+            <tr>
+                <th>Hidden Code</th>
+                <td>$hiddenCode</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td>$comment</td
+                </div>";
+                
+    }else{
+        echo 'Please before submit fill all required information.';
     }
     }
    
