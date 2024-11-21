@@ -100,10 +100,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $telephone = $_POST['telephone'];
     $school = $_POST['school'];
-    $gender = $_POST['gender'];
+    $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
+    $subjects = isset($_POST['subjects']) ? $_POST['subjects'] : array();
+    
     $class = $_POST['class'];
     $age = $_POST['age'];
-    $subjects = (array)$_POST['subjects'];
+   
     $level = $_POST['level'];
    
     $color = $_POST['color'];
@@ -127,13 +129,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Gender:".$gender."<br>";
         echo "Class: $class<br>";
         echo "Age: $age<br>";
-        echo "Subjects: " . implode(", ", (array)$subjects) . "<br>";
+        echo "Subjects: ".$subjects."<br>";
         echo "Level: $level<br>";
         echo "Favorite Color: $color<br>";
         echo "Hidden Code: $hiddenCode<br>";
         echo "Comment: $comment<br>";
-    }else{
-        echo 'kabaye';
     }
     }
    
